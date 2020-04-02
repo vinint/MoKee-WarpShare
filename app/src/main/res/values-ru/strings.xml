@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2019 The MoKee Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="app_name">WarpShare</string>
+    <string name="menu_settings">Настройки…</string>
+    <string name="introduction">WarpShare может быстро отправлять файлы другим пользователям без использования мобильных данных.</string>
+    <string name="hint_perm">Для использования WarpShare требуются некоторые разрешения.</string>
+    <string name="button_perm">Предоставить разрешения…</string>
+    <string name="hint_wifi">Чтобы использовать WarpShare, включите Wi-Fi и подключитесь к одной сети.</string>
+    <string name="button_wifi">Открыть настройки Wi-Fi…</string>
+    <string name="hint_bt">Для использования WarpShare, пожалуйста, включите Bluetooth.</string>
+    <string name="button_bt">Включить Bluetooth…</string>
+    <plurals name="send_files_to">
+        <item quantity="one">Отправить %d файл …</item>
+        <item quantity="few">Отправить %d файлов …</item>
+        <item quantity="many">Отправить %d файлов …</item>
+        <item quantity="other">Отправить %d файлов…</item>
+    </plurals>
+    <string name="send_cancel">Отмена</string>
+    <string name="send_confirm">Отправить</string>
+    <string name="status_waiting_for_confirm">Ожидание подтверждения…</string>
+    <string name="status_sending">Отправка…</string>
+    <string name="status_sending_progress">Отправка… %1$s / %2$s</string>
+    <string name="status_rejected">Отклонено</string>
+    <string name="toast_no_file">Файл не может быть отправлен</string>
+    <string name="toast_completed">Файлы отправлены</string>
+    <string name="toast_rejected">Получатель отклонил</string>
+    <string name="notif_recv_service_channel">Видимый</string>
+    <string name="notif_recv_transfer_channel">Передача файлов</string>
+    <string name="notif_recv_active_title">Ваше устройство можно обнаружить</string>
+    <string name="notif_recv_active_desc">Кое-кто рядом собирается отправить файлы</string>
+    <string name="notif_recv_transfer_request_title">Передача файлов</string>
+    <plurals name="notif_recv_transfer_request_desc">
+        <item quantity="one">%1$s wants to send you %2$d file</item>
+        <item quantity="few">%1$s wants to send you %2$d files</item>
+        <item quantity="many">%1$s wants to send you %2$d files</item>
+        <item quantity="other">%1$s wants to send you %2$d files</item>
+    </plurals>
+    <string name="notif_recv_transfer_request_accept">Принять</string>
+    <string name="notif_recv_transfer_request_reject">Отклонить</string>
+    <plurals name="notif_recv_transfer_progress_title">
+        <item quantity="one">Receiving %1$d file from %2$s…</item>
+        <item quantity="few">Receiving %1$d files from %2$s…</item>
+        <item quantity="many">Receiving %1$d files from %2$s…</item>
+        <item quantity="other">Receiving %1$d files from %2$s…</item>
+    </plurals>
+    <string name="notif_recv_transfer_progress_desc">%1$d / %2$d</string>
+    <string name="notif_recv_transfer_progress_cancel">Отмена</string>
+    <plurals name="notif_recv_transfer_done_title">
+        <item quantity="one">%1$d файл получен от %2$s</item>
+        <item quantity="few">%1$d файла получено от %2$s</item>
+        <item quantity="many">%1$d файлов получено от %2$s</item>
+        <item quantity="other">%1$d файлов получено от %2$s</item>
+    </plurals>
+    <string name="notif_recv_transfer_done_desc">Нажмите, чтобы просмотреть полученные файлы</string>
+    <string name="notif_recv_transfer_done_share">Отправить</string>
+    <string name="notif_recv_transfer_failed_title">Получение прервано</string>
+    <string name="notif_recv_transfer_failed_desc">Не удалось получить файлы из %s</string>
+    <string name="settings">Настройки</string>
+    <string name="settings_name">Отображаемое имя</string>
+    <string name="settings_discoverable">Видимый</string>
+    <string name="settings_discoverable_on">Ваше устройство будет доступно</string>
+    <string name="settings_discoverable_off">Ваше устройство будет недоступно</string>
+</resources>

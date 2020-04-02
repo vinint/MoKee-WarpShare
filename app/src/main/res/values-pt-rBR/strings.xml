@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2019 The MoKee Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="app_name">WarpShare</string>
+    <string name="menu_settings">Configurações…</string>
+    <string name="introduction">WarpShare pode enviar arquivos rapidamente para outros dispositivos próximos sem usar dados móveis.</string>
+    <string name="hint_perm">Alguma permissões são requiridas para utilizar o WarpShare.</string>
+    <string name="button_perm">Conceder permissões…</string>
+    <string name="hint_wifi">Para utilizar o WarpShare, ligue o Wi-Fi e conecte na mesma rede.</string>
+    <string name="button_wifi">Abrir configurações do Wi-Fi…</string>
+    <string name="hint_bt">Para utilizar o WarpShare, ligue o Bluetooth.</string>
+    <string name="button_bt">Ligando Bluetooth…</string>
+    <plurals name="send_files_to">
+        <item quantity="one">Enviar %d arquivo para…</item>
+        <item quantity="other">Enviar %d arquivos para…</item>
+    </plurals>
+    <string name="send_cancel">Cancelar</string>
+    <string name="send_confirm">Enviar</string>
+    <string name="status_waiting_for_confirm">Aguardando confirmação…</string>
+    <string name="status_sending">Enviando…</string>
+    <string name="status_sending_progress">Enviando… %1$s / %2$s</string>
+    <string name="status_rejected">Rejeitado</string>
+    <string name="toast_no_file">Nenhum arquivo pode ser enviado</string>
+    <string name="toast_completed">Arquivos enviados</string>
+    <string name="toast_rejected">Receptor rejeitado</string>
+    <string name="notif_recv_service_channel">Detectável</string>
+    <string name="notif_recv_transfer_channel">Transferência de arquivos</string>
+    <string name="notif_recv_active_title">Seu dispositivo é detectável</string>
+    <string name="notif_recv_active_desc">Alguém por perto está prestes a enviar alguns arquivos</string>
+    <string name="notif_recv_transfer_request_title">Transferência de arquivos</string>
+    <plurals name="notif_recv_transfer_request_desc">
+        <item quantity="one">%1$s quer enviar %2$d arquivo</item>
+        <item quantity="other">%1$s quer enviar %2$d arquivos</item>
+    </plurals>
+    <string name="notif_recv_transfer_request_accept">Aceitar</string>
+    <string name="notif_recv_transfer_request_reject">Rejeitar</string>
+    <plurals name="notif_recv_transfer_progress_title">
+        <item quantity="one">Recebendo %1$d arquivo de %2$s…</item>
+        <item quantity="other">Recebendo %1$d arquivos de %2$s…</item>
+    </plurals>
+    <string name="notif_recv_transfer_progress_desc">%1$d / %2$d</string>
+    <string name="notif_recv_transfer_progress_cancel">Cancelar</string>
+    <plurals name="notif_recv_transfer_done_title">
+        <item quantity="one">%1$d arquivo recebido de %2$s</item>
+        <item quantity="other">%1$d arquivos recebidos de %2$s</item>
+    </plurals>
+    <string name="notif_recv_transfer_done_desc">Toque para explorar arquivos recebidos</string>
+    <string name="notif_recv_transfer_done_share">Compartilhar</string>
+    <string name="notif_recv_transfer_failed_title">Recebimento cancelado</string>
+    <string name="notif_recv_transfer_failed_desc">Falha ao receber arquivos de %s</string>
+    <string name="settings">Configurações</string>
+    <string name="settings_name">Nome de exibição</string>
+    <string name="settings_discoverable">Detectável</string>
+    <string name="settings_discoverable_on">Seu dispositivo aparecerá para outros como destinatário</string>
+    <string name="settings_discoverable_off">Seu dispositivo não será detectável</string>
+</resources>

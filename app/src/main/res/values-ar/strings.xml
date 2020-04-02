@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2019 The MoKee Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="app_name">WarpShare</string>
+    <string name="menu_settings">إعدادات…</string>
+    <string name="introduction">يمكن لـ WarpShare إرسال الملفات بسرعة إلى الآخرين في مكان قريب ، دون أي استخدام لبيانات الجوال.</string>
+    <string name="hint_perm">لاستخدام WarpShare ، هناك عدة أذونات مطلوبة.</string>
+    <string name="button_perm">منح الإذن…</string>
+    <string name="hint_wifi">لاستخدام WarpShare ، يرجى تشغيل Wi-Fi والاتصال بنفس الشبكة.</string>
+    <string name="button_wifi">افتح إعدادات Wi-Fi…</string>
+    <string name="hint_bt">لاستخدام WarpShare ، يرجى تشغيل Bluetooth.</string>
+    <string name="button_bt">تشغيل البلوتوث…</string>
+    <plurals name="send_files_to">
+        <item quantity="zero">ارسال %d ملفات إلى…</item>
+        <item quantity="one">ارسال %d ملف إلى…</item>
+        <item quantity="two">ارسال %d ملفات إلى…</item>
+        <item quantity="few">ارسال %d ملفات إلى…</item>
+        <item quantity="many">ارسال %d ملفات إلى…</item>
+        <item quantity="other">ارسال %d ملفات إلى…</item>
+    </plurals>
+    <string name="send_cancel">إلغاء</string>
+    <string name="send_confirm">إرسال</string>
+    <string name="status_waiting_for_confirm">في انتظار التأكيد…</string>
+    <string name="status_sending">إرسال…</string>
+    <string name="status_sending_progress">إرسال… %1$s / %2$s</string>
+    <string name="status_rejected">مرفوض</string>
+    <string name="toast_no_file">لا يمكن إرسال ملف</string>
+    <string name="toast_completed">تم إرسال الملف</string>
+    <string name="toast_rejected">رفض الاستقبال</string>
+    <string name="notif_recv_service_channel">قابل للاكتشاف</string>
+    <string name="notif_recv_transfer_channel">نقل الملفات</string>
+    <string name="notif_recv_active_title">جهازك قابل للاكتشاف</string>
+    <string name="notif_recv_active_desc">شخص قريب على وشك إرسال بعض الملفات</string>
+    <string name="notif_recv_transfer_request_title">نقل الملفات</string>
+    <plurals name="notif_recv_transfer_request_desc">
+        <item quantity="zero">%1$s يريد أن يرسل لك %2$d ملف
+
+%1$s يريد أن يرسل لك %2$d ملفات</item>
+        <item quantity="one">%1$s يريد أن يرسل لك %2$d ملف
+%1$s يريد أن يرسل لك %2$d ملفات</item>
+        <item quantity="two">%1$s يريدان أن يرسلا لك %2$d ملف
+%1$s يريدان أن يرسلا لك %2$d ملفات</item>
+        <item quantity="few">%1$sيريدون أن يرسلوا لك %2$d ملف
+
+%1$s يريدون أن يرسلوا لك %2$d ملفات</item>
+        <item quantity="many">%1$s يريدون أن يرسلوا لك %2$d ملف
+
+%1$s يريدون أن يرسلوا لك %2$d ملفات</item>
+        <item quantity="other">%1$s يريدون أن يرسلوا لك %2$d ملف
+
+%1$s يريدون أن يرسلوا لك%2$d ملفات</item>
+    </plurals>
+    <string name="notif_recv_transfer_request_accept">قبول</string>
+    <string name="notif_recv_transfer_request_reject">رفض</string>
+    <string name="notif_recv_transfer_progress_desc">%1$d / %2$d</string>
+    <string name="notif_recv_transfer_progress_cancel">إلغاء</string>
+    <string name="notif_recv_transfer_done_share">مشاركة</string>
+    <string name="settings">الإعدادات</string>
+    <string name="settings_discoverable">قابل للاكتشاف</string>
+</resources>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2019 The MoKee Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+    <string name="app_name">WarpShare</string>
+
+    <string name="menu_settings">Settings…</string>
+
+    <string name="introduction">WarpShare can rapidly send files to others nearby, without any usage of mobile data.</string>
+    <string name="hint_perm">To use WarpShare, several permissions are required.</string>
+    <string name="button_perm">Grant permissions…</string>
+    <string name="hint_wifi">To use WarpShare, please turn on Wi-Fi and connect to the same network.</string>
+    <string name="button_wifi">Open Wi-Fi settings…</string>
+    <string name="hint_bt">To use WarpShare, please turn on Bluetooth.</string>
+    <string name="button_bt">Turn on Bluetooth…</string>
+
+    <plurals name="send_files_to">
+        <item quantity="one">Send %d file to…</item>
+        <item quantity="other">Send %d files to…</item>
+    </plurals>
+
+    <string name="send_cancel">Cancel</string>
+    <string name="send_confirm">Send</string>
+
+    <string name="status_waiting_for_confirm">Waiting for confirmation…</string>
+    <string name="status_sending">Sending…</string>
+    <string name="status_sending_progress">Sending… %1$s / %2$s</string>
+    <string name="status_rejected">Rejected</string>
+
+    <string name="toast_no_file">No file can be sent</string>
+    <string name="toast_completed">Files sent</string>
+    <string name="toast_rejected">Receiver rejected</string>
+
+    <string name="notif_recv_service_channel">Discoverable</string>
+    <string name="notif_recv_transfer_channel">File transfer</string>
+
+    <string name="notif_recv_active_title">Your device is discoverable</string>
+    <string name="notif_recv_active_desc">Someone nearby is about to send some files</string>
+
+    <string name="notif_recv_transfer_request_title">File transfer</string>
+    <plurals name="notif_recv_transfer_request_desc">
+        <item quantity="one">%1$s wants to send you %2$d file</item>
+        <item quantity="other">%1$s wants to send you %2$d files</item>
+    </plurals>
+    <string name="notif_recv_transfer_request_accept">Accept</string>
+    <string name="notif_recv_transfer_request_reject">Reject</string>
+
+    <plurals name="notif_recv_transfer_progress_title">
+        <item quantity="one">Receiving %1$d file from %2$s…</item>
+        <item quantity="other">Receiving %1$d files from %2$s…</item>
+    </plurals>
+    <string name="notif_recv_transfer_progress_desc">%1$d / %2$d</string>
+    <string name="notif_recv_transfer_progress_cancel">Cancel</string>
+
+    <plurals name="notif_recv_transfer_done_title">
+        <item quantity="one">%1$d file received from %2$s</item>
+        <item quantity="other">%1$d files received from %2$s</item>
+    </plurals>
+    <string name="notif_recv_transfer_done_desc">Tap to browse received files</string>
+    <string name="notif_recv_transfer_done_share">Share</string>
+
+    <string name="notif_recv_transfer_failed_title">Receiving aborted</string>
+    <string name="notif_recv_transfer_failed_desc">Failed receiving files from %s</string>
+
+    <string name="settings">Settings</string>
+
+    <string name="settings_name">Display name</string>
+
+    <string name="settings_discoverable">Discoverable</string>
+    <string name="settings_discoverable_on">Your device will appear to others as a recipient</string>
+    <string name="settings_discoverable_off">Your device will not be discoverable</string>
+
+</resources>

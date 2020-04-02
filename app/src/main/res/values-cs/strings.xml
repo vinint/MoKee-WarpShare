@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2019 The MoKee Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="app_name">WarpShare</string>
+    <string name="menu_settings">Nastavení…</string>
+    <string name="introduction">WarpShare může rychle odesílat soubory ostatním v okolí bez použití mobilních dat.</string>
+    <string name="hint_perm">Pro použití WarpShare je vyžadováno několik oprávnění.</string>
+    <string name="button_perm">Udělit oprávnění…</string>
+    <string name="hint_wifi">Pro použití WarpShare je nutné zapnout Wi-Fi a připojit se ke stejné síti.</string>
+    <string name="button_wifi">Otevřít nastavení Wi-Fi…</string>
+    <string name="hint_bt">Pro použití WarpShare je nutné zapnout bluetooth.</string>
+    <string name="button_bt">Zapnout Bluetooth…</string>
+    <plurals name="send_files_to">
+        <item quantity="one">Odeslat %d soubor do…</item>
+        <item quantity="few">Odeslat %d soubory do…</item>
+        <item quantity="many">Odeslat %d souborů do…</item>
+        <item quantity="other">Odeslat %d souborů do…</item>
+    </plurals>
+    <string name="send_cancel">Zrušit</string>
+    <string name="send_confirm">Odeslat</string>
+    <string name="status_waiting_for_confirm">Čekání na potvrzení…</string>
+    <string name="status_sending">Odesílání…</string>
+    <string name="status_sending_progress">Odesílání… %1$s / %2$s</string>
+    <string name="status_rejected">Odmítnuto</string>
+    <string name="toast_no_file">Nelze odeslat žádný soubor</string>
+    <string name="toast_completed">Soubory byly odeslány</string>
+    <string name="toast_rejected">Příjemce byl odmítnut</string>
+    <string name="notif_recv_service_channel">Zjistitelné</string>
+    <string name="notif_recv_transfer_channel">Přenos souborů</string>
+    <string name="notif_recv_active_title">Vaše zařízení je zjistitelné</string>
+    <string name="notif_recv_active_desc">Někdo poblíž se vám chystá odeslat nějaké soubory</string>
+    <string name="notif_recv_transfer_request_title">Přenos souborů</string>
+    <plurals name="notif_recv_transfer_request_desc">
+        <item quantity="one">%1$s vám chce poslat %2$d soubor</item>
+        <item quantity="few">%1$s vám chce poslat %2$d soubory</item>
+        <item quantity="many">%1$s vám chce poslat %2$d souborů</item>
+        <item quantity="other">%1$s vám chce poslat %2$d souborů</item>
+    </plurals>
+    <string name="notif_recv_transfer_request_accept">Přijmout</string>
+    <string name="notif_recv_transfer_request_reject">Odmítnout</string>
+    <plurals name="notif_recv_transfer_progress_title">
+        <item quantity="one">Přijímání %1$d souboru od %2$s…</item>
+        <item quantity="few">Přijímání %1$d souborů od %2$s…</item>
+        <item quantity="many">Přijímání %1$d souborů od %2$s…</item>
+        <item quantity="other">Přijímání %1$d souborů od %2$s…</item>
+    </plurals>
+    <string name="notif_recv_transfer_progress_desc">%1$d / %2$d</string>
+    <string name="notif_recv_transfer_progress_cancel">Zrušit</string>
+    <plurals name="notif_recv_transfer_done_title">
+        <item quantity="one">%1$d soubor přijat od %2$s</item>
+        <item quantity="few">%1$d soubory přijaty od %2$s</item>
+        <item quantity="many">%1$d souborů přijato od %2$s</item>
+        <item quantity="other">%1$d souborů přijato od %2$s</item>
+    </plurals>
+    <string name="notif_recv_transfer_done_desc">Klepnutím procházet přijaté soubory</string>
+    <string name="notif_recv_transfer_done_share">Sdílet</string>
+    <string name="notif_recv_transfer_failed_title">Přijímání přerušeno</string>
+    <string name="notif_recv_transfer_failed_desc">Nepodařilo se přijmout soubory od %s</string>
+    <string name="settings">Nastavení</string>
+    <string name="settings_name">Zobrazovaný název</string>
+    <string name="settings_discoverable">Zjistitelné</string>
+    <string name="settings_discoverable_on">Vaše zařízení se ostatním zobrazí jako příjemce</string>
+    <string name="settings_discoverable_off">Vaše zařízení nebude zjistitelné</string>
+</resources>
