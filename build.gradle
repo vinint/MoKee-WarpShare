@@ -3,8 +3,8 @@
 buildscript {
     ext.kotlin_version = '1.3.61'
     repositories {
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
         mavenCentral()
-//        maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
         google()
         jcenter()
         
@@ -22,8 +22,8 @@ buildscript {
 
 allprojects {
     repositories {
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
         mavenCentral()
-//        maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
         google()
         jcenter()
         

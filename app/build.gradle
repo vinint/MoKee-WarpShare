@@ -51,7 +51,7 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.6'
     implementation 'com.gemalto.jp2:jp2-android:1.0'
     implementation 'com.koushikdutta.async:androidasync:2.2.1'
-    implementation 'org.apache.commons:commons-compress:1.19'
+    implementation 'org.apache.commons:commons-compress:1.20'
     implementation 'com.googlecode.plist:dd-plist:1.22'
     implementation 'org.slf4j:slf4j-api:1.7.16'
     implementation 'org.jmdns:jmdns:3.5.1'
