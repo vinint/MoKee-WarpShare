@@ -58,7 +58,7 @@ class AirDropServer {
 
     int start(String host) {
         mServer = new AsyncHttpServer();
-        mServer.listenSecure(PORT, mCertificateManager.getSSLContext());
+        mServer.listenSecure(PORT, mCertificateManager.getServerSSLContext());
         mServer.post("/Discover", new NSDictionaryHttpServerRequestCallback() {
             @Override
             protected void onRequest(InetAddress remote, NSDictionary request,

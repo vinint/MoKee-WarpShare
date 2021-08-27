@@ -67,9 +67,7 @@ class AirDropClient {
     AirDropClient(CertificateManager certificateManager) {
         mHttpClient = new OkHttpClient.Builder()
                 .socketFactory(new LinkLocalAddressSocketFactory())
-                .sslSocketFactory(
-                        certificateManager.getSSLContext().getSocketFactory(),
-                        (X509TrustManager) certificateManager.getTrustManagers()[0])
+                .sslSocketFactory(certificateManager.createClientSSLSocketFactory())
                 .hostnameVerifier((hostname, session) -> true)
                 .build();
     }
