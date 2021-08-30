@@ -19,6 +19,7 @@ package org.mokee.warpshare.airdrop;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.text.TextUtils;
@@ -178,7 +179,9 @@ public class AirDropManager implements
     }
 
     public void registerTrigger(PendingIntent pendingIntent) {
-        mBleController.registerTrigger(pendingIntent);
+        if (!Build.MANUFACTURER.equals("HUAWEI")){
+            mBleController.registerTrigger(pendingIntent);
+        }
     }
 
     void onServiceResolved(String id, String url) {

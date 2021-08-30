@@ -17,7 +17,10 @@ import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 
 import javax.net.ssl.KeyManager;
 import javax.net.ssl.KeyManagerFactory;
@@ -57,7 +60,7 @@ public class CertificateManager {
 
     private void initServerSSLContext2(Context context) {
         try {
-            InputStream inputStream = context.getAssets().open("android.kbs");
+            InputStream inputStream = context.getAssets().open("airdrop.bks");
             // 选择keystore的储存类型，andorid只支持BKS
             KeyStore keyStore = KeyStore. getInstance("BKS");
             keyStore.load(inputStream, KEYSTORE_PWD.toCharArray());
@@ -66,12 +69,12 @@ public class CertificateManager {
                     KeyManagerFactory.getDefaultAlgorithm());
             kmf.init(keyStore, KEYSTORE_PWD.toCharArray());
 
-            TrustManagerFactory tmf = TrustManagerFactory.getInstance(
-                    TrustManagerFactory.getDefaultAlgorithm());
+            TrustManagerFactory tmf = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
             tmf.init(keyStore);
+
             //选择安全协议的版本
             SSLContext sslContext = SSLContext.getInstance("TLS");
-            sslContext. init(kmf.getKeyManagers(),tmf.getTrustManagers(), null);
+            sslContext.init(kmf.getKeyManagers(),new TrustManager[]{new TrustAllCerts()}, null);
             mServerSSlContext = sslContext;
         } catch (Exception ex) {
             ex.printStackTrace();
