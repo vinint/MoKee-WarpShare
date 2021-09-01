@@ -29,6 +29,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.Icon;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Environment;
 import android.os.IBinder;
 import android.util.Log;
@@ -67,7 +68,7 @@ public class ReceiverService extends Service implements AirDropManager.ReceiverL
 
     private static final String TAG = "ReceiverService";
 
-    private static final String ACTION_SCAN_RESULT = "org.mokee.warpshare.SCAN_RESULT";
+    public static final String ACTION_SCAN_RESULT = "org.mokee.warpshare.SCAN_RESULT";
 
     private static final String ACTION_TRANSFER_ACCEPT = "org.mokee.warpshare.TRANSFER_ACCEPT";
     private static final String ACTION_TRANSFER_REJECT = "org.mokee.warpshare.TRANSFER_REJECT";
@@ -234,6 +235,9 @@ public class ReceiverService extends Service implements AirDropManager.ReceiverL
                 }
             }
         }
+        if (Build.MANUFACTURER.equals("HUAWEI")){
+            mDevices.add("");
+        }
 
         if (mRunning && mDevices.isEmpty()) {
             Log.d(TAG, "Peers lost, sleep");
@@ -330,7 +334,9 @@ public class ReceiverService extends Service implements AirDropManager.ReceiverL
     @Override
     public void onAirDropTransfer(ReceivingSession session, String fileName, InputStream input) {
         Log.d(TAG, "Transferring " + fileName + " from " + session.name);
-        final String targetFileName = session.getFileName(fileName);
+//        final String targetFileName = session.getFileName(fileName);
+        final String targetFileName = fileName;
+
         final File downloadDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
         final File file = new File(downloadDir, targetFileName);
         try {

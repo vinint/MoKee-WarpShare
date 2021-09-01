@@ -18,6 +18,7 @@ package org.mokee.warpshare.airdrop;
 
 import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Handler;
@@ -33,6 +34,8 @@ import com.dd.plist.NSDictionary;
 import com.dd.plist.NSObject;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
+
+import org.mokee.warpshare.ReceiverService;
 import org.mokee.warpshare.certificate.CertificateManager;
 
 import org.mokee.warpshare.GossipyInputStream;
@@ -61,6 +64,7 @@ import okio.BufferedSink;
 import okio.Okio;
 import okio.Pipe;
 
+import static org.mokee.warpshare.ReceiverService.ACTION_SCAN_RESULT;
 import static org.mokee.warpshare.airdrop.AirDropTypes.getEntryType;
 import static org.mokee.warpshare.airdrop.AirDropTypes.getMimeType;
 
@@ -125,8 +129,10 @@ public class AirDropManager implements
     }
 
     public int ready() {
-        if (!mBleController.ready()) {
-            return STATUS_NO_BLUETOOTH;
+        if(!Build.MANUFACTURER.equals("HUAWEI")){
+            if (!mBleController.ready()) {
+                return STATUS_NO_BLUETOOTH;
+            }
         }
 
         if (!mWlanController.ready()) {
@@ -178,8 +184,11 @@ public class AirDropManager implements
         mArchiveExecutor.shutdownNow();
     }
 
-    public void registerTrigger(PendingIntent pendingIntent) {
-        if (!Build.MANUFACTURER.equals("HUAWEI")){
+    public void registerTrigger(PendingIntent pendingIntent,Context context) {
+        if (Build.MANUFACTURER.equals("HUAWEI")){
+            Intent intent = new Intent(ACTION_SCAN_RESULT, null, context, ReceiverService.class);
+            context.startService(intent);
+        }else {
             mBleController.registerTrigger(pendingIntent);
         }
     }

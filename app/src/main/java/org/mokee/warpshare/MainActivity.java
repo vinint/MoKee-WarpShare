@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity implements DiscoverListener 
 
         mAirDropManager = new AirDropManager(this,
                 WarpShareApplication.from(this).getCertificateManager());
-        mAirDropManager.registerTrigger(TriggerReceiver.getTriggerIntent(this));
+        mAirDropManager.registerTrigger(TriggerReceiver.getTriggerIntent(this),this);
 
         mNearShareManager = new NearShareManager(this);
 
@@ -198,7 +198,7 @@ public class MainActivity extends AppCompatActivity implements DiscoverListener 
                 if (resultCode != RESULT_OK) {
                     finish();
                 } else {
-                    mAirDropManager.registerTrigger(TriggerReceiver.getTriggerIntent(this));
+                    mAirDropManager.registerTrigger(TriggerReceiver.getTriggerIntent(this),this);
                 }
                 break;
             default:

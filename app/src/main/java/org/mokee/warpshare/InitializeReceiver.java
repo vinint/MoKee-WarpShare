@@ -33,7 +33,7 @@ public class InitializeReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         final AirDropManager airDropManager = new AirDropManager(context,
                 WarpShareApplication.from(context).getCertificateManager());
-        airDropManager.registerTrigger(TriggerReceiver.getTriggerIntent(context));
+        airDropManager.registerTrigger(TriggerReceiver.getTriggerIntent(context),context);
         Log.d(TAG, "Initialized");
     }
 

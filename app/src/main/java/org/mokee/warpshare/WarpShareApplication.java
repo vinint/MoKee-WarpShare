@@ -26,14 +26,19 @@ import org.mokee.warpshare.certificate.CertificateManager;
 public class WarpShareApplication extends Application {
 
     private CertificateManager mCertificateManager;
+    private static WarpShareApplication application;
 
     static WarpShareApplication from(Context context) {
         return (WarpShareApplication) context.getApplicationContext();
+    }
+    static WarpShareApplication getInstance() {
+        return application;
     }
 
     @Override
     public void onCreate() {
         super.onCreate();
+        application = this;
         mCertificateManager = new CertificateManager(this);
     }
 
