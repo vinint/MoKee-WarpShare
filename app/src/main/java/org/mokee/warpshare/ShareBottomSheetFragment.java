@@ -148,7 +148,7 @@ public class ShareBottomSheetFragment extends BottomSheetDialogFragment
         peersView.setAdapter(mAdapter);
 
         final ClipData clipData = mParent.getIntent().getClipData();
-        if (clipData == null) {
+        if (clipData == null)  {
             Log.w(TAG, "ClipData should not be null");
             handleSendFailed();
             return;

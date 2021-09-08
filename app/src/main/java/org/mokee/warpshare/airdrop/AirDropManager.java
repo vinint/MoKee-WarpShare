@@ -129,10 +129,8 @@ public class AirDropManager implements
     }
 
     public int ready() {
-        if(!Build.MANUFACTURER.equals("HUAWEI")){
-            if (!mBleController.ready()) {
-                return STATUS_NO_BLUETOOTH;
-            }
+        if (!mBleController.ready()) {
+            return STATUS_NO_BLUETOOTH;
         }
 
         if (!mWlanController.ready()) {
@@ -184,13 +182,8 @@ public class AirDropManager implements
         mArchiveExecutor.shutdownNow();
     }
 
-    public void registerTrigger(PendingIntent pendingIntent,Context context) {
-        if (Build.MANUFACTURER.equals("HUAWEI")){
-            Intent intent = new Intent(ACTION_SCAN_RESULT, null, context, ReceiverService.class);
-            context.startService(intent);
-        }else {
-            mBleController.registerTrigger(pendingIntent);
-        }
+    public void registerTrigger(PendingIntent pendingIntent, Context context) {
+        mBleController.registerTrigger(pendingIntent);
     }
 
     void onServiceResolved(String id, String url) {

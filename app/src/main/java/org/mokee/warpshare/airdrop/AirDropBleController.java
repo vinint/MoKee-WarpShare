@@ -18,26 +18,38 @@ package org.mokee.warpshare.airdrop;
 
 import android.app.PendingIntent;
 import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothManager;
 import android.bluetooth.le.AdvertiseCallback;
 import android.bluetooth.le.AdvertiseData;
 import android.bluetooth.le.AdvertiseSettings;
 import android.bluetooth.le.BluetoothLeAdvertiser;
 import android.bluetooth.le.BluetoothLeScanner;
+import android.bluetooth.le.ScanCallback;
 import android.bluetooth.le.ScanFilter;
+import android.bluetooth.le.ScanResult;
 import android.bluetooth.le.ScanSettings;
 import android.content.Context;
+import android.os.Build;
 import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.bluetooth.le.BluetoothLeScanner.EXTRA_CALLBACK_TYPE;
+import static android.bluetooth.le.BluetoothLeScanner.EXTRA_LIST_SCAN_RESULT;
+import static android.bluetooth.le.ScanSettings.CALLBACK_TYPE_ALL_MATCHES;
 import static android.bluetooth.le.ScanSettings.CALLBACK_TYPE_FIRST_MATCH;
 import static android.bluetooth.le.ScanSettings.CALLBACK_TYPE_MATCH_LOST;
 import static android.bluetooth.le.ScanSettings.MATCH_MODE_STICKY;
 import static android.bluetooth.le.ScanSettings.MATCH_NUM_MAX_ADVERTISEMENT;
 import static android.bluetooth.le.ScanSettings.SCAN_MODE_LOW_LATENCY;
 import static android.content.Context.BLUETOOTH_SERVICE;
+
+import androidx.annotation.RequiresApi;
+
+import org.mokee.warpshare.TriggerReceiver;
+import org.mokee.warpshare.WarpShareApplication;
 
 class AirDropBleController {
 
@@ -160,6 +172,7 @@ class AirDropBleController {
         mAdvertiser.stopAdvertising(mAdvertiseCallback);
     }
 
+
     void registerTrigger(PendingIntent pendingIntent) {
         synchronized (mLock) {
             getScanner();
@@ -173,15 +186,23 @@ class AirDropBleController {
                 .setManufacturerData(MANUFACTURER_ID, MANUFACTURER_DATA, MANUFACTURER_DATA)
                 .build());
 
-        mScanner.startScan(filters,
-                new ScanSettings.Builder()
-                        .setCallbackType(CALLBACK_TYPE_FIRST_MATCH | CALLBACK_TYPE_MATCH_LOST)
-                        .setMatchMode(MATCH_MODE_STICKY)
-                        .setNumOfMatches(MATCH_NUM_MAX_ADVERTISEMENT)
-                        .setScanMode(SCAN_MODE_LOW_LATENCY)
-                        .build(),
-                pendingIntent);
-
+        try {
+            mScanner.startScan(filters,
+                    new ScanSettings.Builder()
+                            .setCallbackType(CALLBACK_TYPE_FIRST_MATCH | CALLBACK_TYPE_MATCH_LOST)
+                            .setMatchMode(MATCH_MODE_STICKY)
+                            .setNumOfMatches(MATCH_NUM_MAX_ADVERTISEMENT)
+                            .setScanMode(SCAN_MODE_LOW_LATENCY)
+                            .build(),
+                    pendingIntent);
+        }catch (Exception ex){
+            PendingIntent pendingIntent2 = TriggerReceiver.getTriggerIntent2(mContext,CALLBACK_TYPE_FIRST_MATCH,null);
+            try {
+                pendingIntent2.send();
+            } catch (PendingIntent.CanceledException e) {
+                e.printStackTrace();
+            }
+        }
         Log.d(TAG, "startScan");
     }
 

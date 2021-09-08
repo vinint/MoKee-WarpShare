@@ -168,7 +168,7 @@ class AirDropNsdController {
         if (addresses.length > 0) {
             final String url = String.format(Locale.US, "https://%s:%d",
                     addresses[0].getHostAddress(), serviceInfo.getPort());
-
+            Log.d(TAG, "Resolved: " + url);
             postServiceResolved(serviceInfo.getName(), url);
         } else {
             Log.w(TAG, "No IPv4 address available, ignored: " + serviceInfo.getName());

@@ -227,7 +227,7 @@ public class ReceiverService extends Service implements AirDropManager.ReceiverL
         if (results != null) {
             if (callbackType == CALLBACK_TYPE_FIRST_MATCH) {
                 for (ScanResult result : results) {
-                    mDevices.add(result.getDevice().getAddress());
+                    mDevices.add(result == null?"00:00:00:00:00:00":result.getDevice().getAddress());
                 }
             } else if (callbackType == CALLBACK_TYPE_MATCH_LOST) {
                 for (ScanResult result : results) {
@@ -235,10 +235,6 @@ public class ReceiverService extends Service implements AirDropManager.ReceiverL
                 }
             }
         }
-        if (Build.MANUFACTURER.equals("HUAWEI")){
-            mDevices.add("");
-        }
-
         if (mRunning && mDevices.isEmpty()) {
             Log.d(TAG, "Peers lost, sleep");
 

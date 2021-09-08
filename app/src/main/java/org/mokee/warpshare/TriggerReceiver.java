@@ -16,11 +16,18 @@
 
 package org.mokee.warpshare;
 
+import static android.bluetooth.le.BluetoothLeScanner.EXTRA_CALLBACK_TYPE;
+import static android.bluetooth.le.BluetoothLeScanner.EXTRA_LIST_SCAN_RESULT;
+
 import android.app.PendingIntent;
+import android.bluetooth.le.ScanResult;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class TriggerReceiver extends BroadcastReceiver {
 
@@ -33,6 +40,20 @@ public class TriggerReceiver extends BroadcastReceiver {
 
         final Intent intent = new Intent(context, TriggerReceiver.class);
         intent.putExtra(TriggerReceiver.EXTRA_CALLBACK_INTENT, callbackIntent);
+
+        return PendingIntent.getBroadcast(context, callbackIntent.hashCode(),
+                intent, PendingIntent.FLAG_UPDATE_CURRENT);
+    }
+
+    public static PendingIntent getTriggerIntent2(Context context, int callbackType, ScanResult result) {
+        final PendingIntent callbackIntent = ReceiverService.getTriggerIntent(context);
+
+        final Intent intent = new Intent(context, TriggerReceiver.class);
+        intent.putExtra(TriggerReceiver.EXTRA_CALLBACK_INTENT, callbackIntent);
+        intent.putExtra(EXTRA_CALLBACK_TYPE,callbackType);
+        ArrayList scanList = new ArrayList<>();
+        scanList.add(result);
+        intent.putExtra(EXTRA_LIST_SCAN_RESULT,scanList);
 
         return PendingIntent.getBroadcast(context, callbackIntent.hashCode(),
                 intent, PendingIntent.FLAG_UPDATE_CURRENT);
