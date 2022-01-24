@@ -16,6 +16,7 @@
 
 package org.mokee.warpshare;
 
+import android.Manifest;
 import android.content.ClipData;
 import android.content.Context;
 import android.content.Intent;
@@ -49,15 +50,20 @@ import org.mokee.warpshare.base.SendListener;
 import org.mokee.warpshare.base.SendingSession;
 import org.mokee.warpshare.nearbysharing.NearShareManager;
 import org.mokee.warpshare.nearbysharing.NearSharePeer;
+import org.mokee.warpshare.wifip2p.AndroidWifiP2pController;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 import static android.content.pm.PackageManager.PERMISSION_GRANTED;
 import static org.mokee.warpshare.airdrop.AirDropManager.STATUS_OK;
+
+import com.cretin.tools.fanpermission.FanPermissionListener;
+import com.cretin.tools.fanpermission.FanPermissionUtils;
 
 @SuppressWarnings("SwitchStatementWithTooFewBranches")
 public class MainActivity extends AppCompatActivity implements DiscoverListener {

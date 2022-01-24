@@ -466,7 +466,9 @@ public class ReceiverService extends Service implements AirDropManager.ReceiverL
     private Uri getUriForReceivedFile(String fileName) {
         final File downloadDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
         final File file = new File(downloadDir, fileName);
-        return getUriForFile(this, "org.mokee.warpshare.files", file);
+        //return  (this, "org.mokee.warpshare.files", file);
+        return getUriForFile(this, BuildConfig.APPLICATION_ID + ".FileProvider", file);
+
     }
 
     private String getGeneralMimeType(List<String> mimeTypes) {

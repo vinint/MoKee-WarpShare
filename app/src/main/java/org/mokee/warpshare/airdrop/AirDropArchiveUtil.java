@@ -28,6 +28,7 @@ import org.mokee.warpshare.base.Entity;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.nio.charset.Charset;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -75,7 +76,8 @@ class AirDropArchiveUtil {
 
     static void unpack(InputStream input, Set<String> paths, FileFactory factory) throws IOException {
         try (final GzipCompressorInputStream gzip = new GzipCompressorInputStream(input);
-             final CpioArchiveInputStream cpio = new CpioArchiveInputStream(gzip)) {
+
+             final CpioArchiveInputStream cpio = new CpioArchiveInputStream(gzip, "UTF-8")) {
             CpioArchiveEntry entry;
             while ((entry = cpio.getNextCPIOEntry()) != null) {
                 if (entry.isRegularFile() && paths.contains(entry.getName())) {

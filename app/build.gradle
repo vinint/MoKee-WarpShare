@@ -62,4 +62,6 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 //    implementation files('libs/cloud.jar')
+
+    implementation 'com.github.MZCretin:FanPermission:1.1.0'
 }
