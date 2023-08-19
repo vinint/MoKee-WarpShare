@@ -14,7 +14,7 @@ https://github.com/MoKee/android_packages_apps_WarpShare
 
 ```bash
 yes | sdk install java 8.0.372-tem
-# when prompted to use as default select yes
+# if prompted to use as default select yes
 yes | sdkmanager --licenses
 
 ./gradlew assembleDebug
